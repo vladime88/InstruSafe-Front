@@ -13,19 +13,19 @@ import {
 
 function Inscription() {
   const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
   const toast = useToast()
 
   const handleSubmit = (event) => {
     event.preventDefault()
     toast({
       position: 'top',
-      title: `Registration failed`,
-      description: `This registration failed for: 
+      title: `Registration succeded`,
+      description: `This registration set for: 
         username: ${username} 
-        password: ${password}
+        phone number: ${phoneNumber}
       `,
-      status: 'error',
+      status: 'success',
       duration: 3000,
       isClosable: true,
     })
@@ -34,10 +34,10 @@ function Inscription() {
   return (
     <>
       <VStack spacing={10}>
-        <Heading mb={10}>Form</Heading>
+        <Heading mb={10}>Incrivez-vous</Heading>
         <form>
           <FormControl id="username" isRequired={true}>
-            <FormLabel>Username</FormLabel>
+            <FormLabel>Nom :</FormLabel>
             <Input
               type="text"
               value={username}
@@ -45,18 +45,18 @@ function Inscription() {
                 setUsername(event.currentTarget.value)
               }}
             />
-            <FormHelperText>Please enter a unique username</FormHelperText>
+            <FormHelperText>Entrez votre nom complet</FormHelperText>
           </FormControl>
-          <FormControl mt={6} id="password" isRequired={true}>
-            <FormLabel>Password</FormLabel>
+          <FormControl mt={6} id="phoneNumber" isRequired={true}>
+            <FormLabel>Numéro de téléphone :</FormLabel>
             <Input
-              value={password}
-              type="password"
+              value={phoneNumber}
+              type="tel"
               onChange={(event) => {
-                setPassword(event.currentTarget.value)
+                setPhoneNumber(event.currentTarget.value)
               }}
             />
-            <FormHelperText>Choose a strong password</FormHelperText>
+            <FormHelperText>Entrez votre numéro complet</FormHelperText>
           </FormControl>
           <Center>
             <Button

@@ -7,7 +7,7 @@ function App() {
 
   return (
   
- <Container maxW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden">
+ <Container maxW="3xl" borderWidth="1px" borderRadius="lg" overflow="hidden">
     <Header/>
     <Main/>
     

@@ -4,7 +4,7 @@ import {
   FormControl,
   FormLabel,
   Input,
-  FormHelperText,
+  Select,
   VStack,
   Button,
   Center,
@@ -12,20 +12,25 @@ import {
 } from '@chakra-ui/react'
 
 function Instrument() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [brand, setBrand] = useState('')
+  const [year, setYear] = useState('')
+  const [ref, setRef] = useState('')
+  const [certif, setCertif] = useState('')
+  
+
   const toast = useToast()
 
   const handleSubmit = (event) => {
     event.preventDefault()
     toast({
       position: 'top',
-      title: `Registration failed`,
-      description: `This registration failed for: 
-        username: ${username} 
-        password: ${password}
+      title: `Registration succeded`,
+      description: `This registration is set for: 
+        brand: ${brand} 
+        year: ${year}
+        ref: ${ref}
       `,
-      status: 'error',
+      status: 'success',
       duration: 3000,
       isClosable: true,
     })
@@ -34,30 +39,60 @@ function Instrument() {
   return (
     <>
       <VStack spacing={10}>
-        <Heading mb={10}>Form</Heading>
+        <Heading mb={10}>Enregistrez votre instrument</Heading>
         <form>
-          <FormControl id="username" isRequired={true}>
-            <FormLabel>Username</FormLabel>
+          <FormControl id="brand" isRequired={true}>
+            <FormLabel>Marque:</FormLabel>
             <Input
               type="text"
-              value={username}
+              value={brand}
               onChange={(event) => {
-                setUsername(event.currentTarget.value)
+                setBrand(event.currentTarget.value)
               }}
             />
-            <FormHelperText>Please enter a unique username</FormHelperText>
+           
           </FormControl>
-          <FormControl mt={6} id="password" isRequired={true}>
-            <FormLabel>Password</FormLabel>
+          <FormControl id="year" isRequired={true}>
+            <FormLabel>Année:</FormLabel>
             <Input
-              value={password}
-              type="password"
+              type="text"
+              value={year}
               onChange={(event) => {
-                setPassword(event.currentTarget.value)
+                setYear(event.currentTarget.value)
               }}
             />
-            <FormHelperText>Choose a strong password</FormHelperText>
+            
           </FormControl>
+          <FormControl id="ref" isRequired={true}>
+            <FormLabel>Ref:</FormLabel>
+            <Input
+              type="text"
+              value={ref}
+              onChange={(event) => {
+                setRef(event.currentTarget.value)
+              }}
+            />
+          
+          </FormControl> 
+          <FormControl id="categorie" isRequired={true}>
+          <FormLabel>Catégorie</FormLabel>
+            <Select placeholder="Piano">
+  <option value="option0">Piano</option>
+  <option value="option1">Guitare</option>
+  <option value="option2">Trompette</option>
+</Select>
+          </FormControl>
+          <FormControl id="certif" isRequired={true}>
+            <FormLabel>Téléchargez votre certificat d'authenticité</FormLabel>
+            <Input
+              type="text"
+              value={certif}
+              onChange={(event) => {
+                setCertif(event.currentTarget.value)
+              }}
+            />
+          
+          </FormControl>          
           <Center>
             <Button
               type="submit"
