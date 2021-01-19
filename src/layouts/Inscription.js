@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import {MyAxeContext} from "./../App"
 import {
   Heading,
   FormControl,
@@ -8,27 +9,34 @@ import {
   VStack,
   Button,
   Center,
-  useToast,
+  // useToast,
 } from '@chakra-ui/react'
 
 function Inscription() {
-  const [username, setUsername] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
-  const toast = useToast()
+  const MyAxe = useContext(MyAxeContext);
+  const [name, setName] = useState('')
+  const [tel, setTel] = useState('')
+  
+ // const toast = useToast()
 
-  const handleSubmit = (event) => {
+/*  const handleSubmit = (event) => {
     event.preventDefault()
     toast({
       position: 'top',
       title: `Registration succeded`,
       description: `This registration set for: 
-        username: ${username} 
-        phone number: ${phoneNumber}
+        username: ${name} 
+        phone: ${tel}
       `,
       status: 'success',
       duration: 3000,
       isClosable: true,
     })
+  }
+*/
+  const handleInscription = async () => {
+    await MyAxe.createMember(name, tel);
+  
   }
 
   return (
@@ -36,24 +44,24 @@ function Inscription() {
       <VStack spacing={10}>
         <Heading mb={10}>Incrivez-vous</Heading>
         <form>
-          <FormControl id="username" isRequired={true}>
+          <FormControl id="name" isRequired={true}>
             <FormLabel>Nom :</FormLabel>
             <Input
               type="text"
-              value={username}
+              value={name}
               onChange={(event) => {
-                setUsername(event.currentTarget.value)
+                setName(event.currentTarget.value)
               }}
             />
             <FormHelperText>Entrez votre nom complet</FormHelperText>
           </FormControl>
-          <FormControl mt={6} id="phoneNumber" isRequired={true}>
+          <FormControl mt={6} id="tel" isRequired={true}>
             <FormLabel>Numéro de téléphone :</FormLabel>
             <Input
-              value={phoneNumber}
+              value={tel}
               type="tel"
               onChange={(event) => {
-                setPhoneNumber(event.currentTarget.value)
+                setTel(event.currentTarget.value)
               }}
             />
             <FormHelperText>Entrez votre numéro complet</FormHelperText>
@@ -63,7 +71,8 @@ function Inscription() {
               type="submit"
               colorScheme="blue"
               mt={10}
-              onClick={handleSubmit}
+              // eslint-disable-next-line no-sequences
+              onClick={handleInscription}
             >
               register
             </Button>

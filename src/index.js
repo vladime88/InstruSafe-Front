@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from "@chakra-ui/react";
+import { Web3Provider } from "./hooks/useWeb3";
 import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
+     <Web3Provider>
     <ChakraProvider>
     <App />
     
     </ChakraProvider>
+    </Web3Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
