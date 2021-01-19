@@ -5,10 +5,10 @@ import {Text, Heading,Flex, Stack, Container,Badge, Spacer} from '@chakra-ui/rea
 export default function Header() {
 
 return (
-  <Container centerContent>
+  <Container centerContent pb={4}> 
   <Stack>
       
-          <Flex>
+          <Flex pt={4}>
            <DarkModeSwitch/>
             
          <Spacer/>
@@ -16,9 +16,10 @@ return (
           as="h1"
           size="sm"
           pt={4}
-          ><Text fontSize="2xl" fontWeight="bold">InstruSafe, your instrument is safe!!</Text>
-            <Badge variant="subtle" variantColor="pink" ml={1}>
-          BETA
+          ml={4}
+          ><Text fontSize="3xl" fontWeight="bold">InstruSafe, your instrument is safe!!</Text>
+            <Badge as="i" variant="solid" colorScheme="purple" ml={1}>
+          Collector
         </Badge>
           </Heading>
           </Flex>
