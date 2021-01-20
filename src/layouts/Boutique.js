@@ -9,7 +9,6 @@ import {
   Image,
   Badge,
   Text,
-  Icon,
   Grid
 } from '@chakra-ui/react';
 
@@ -35,13 +34,13 @@ function Boutique() {
         >
           <Box>
             <Image
-              size="100px"
+              boxSize="250px"
               // fallbackSrc="https://via.placeholder.com/150"
               // src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               src={oldguit}
-              width="100%"
-              height="auto"
-              minHeight="245px"
+              // width="100%"
+              // height="auto"
+              // minHeight="245px"
             />
           </Box>
           <Box p={5} pb={8}>
@@ -63,27 +62,15 @@ function Boutique() {
                 NEW
               </Badge>
               <Text color="gray.500" fontSize="xs">
-                3 BEDS • 2 BATHS
+                DJANGO • SL11
               </Text>
             </Box>
             <Text fontWeight="bold" fontSize="xl">
-              Modern home in city center
+              A Jazz manouch classic
             </Text>
             <Text fontSize="sm" mb={3}>
-              $119/night
+              YEAR : 1949
             </Text>
-            <Box
-              display="flex"
-              alignItems="center"
-              flexDirection="row"
-              justifyContent="flex-start"
-            >
-              <Icon name="star" color="yellow.400" mr={1} />
-              <Text fontWeight="bold" mr={1}>
-                4.84
-              </Text>
-              <Text fontSize="sm">(190)</Text>
-            </Box>
           </Box>
         </Box>
         <Box
@@ -102,13 +89,13 @@ function Boutique() {
         >
           <Box>
             <Image
-              size="100px"
+              boxSize="250px"
               // fallbackSrc="https://via.placeholder.com/150"
               // src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               src={gretsch}
-              width="100%"
-              height="auto"
-              minHeight="245px"
+             // width="100%"
+             // height="auto"
+             //  minHeight="245px"
             />
           </Box>
           <Box p={5} pb={8}>
@@ -139,18 +126,6 @@ function Boutique() {
             <Text fontSize="sm" mb={3}>
               YEAR : 1979
             </Text>
-            <Box
-              display="flex"
-              alignItems="center"
-              flexDirection="row"
-              justifyContent="flex-start"
-            >
-              <Icon name="star" color="yellow.400" mr={1} />
-              <Text fontWeight="bold" mr={1}>
-                4.84
-              </Text>
-              <Text fontSize="sm">(190)</Text>
-            </Box>
           </Box>
         </Box>
         </Grid>

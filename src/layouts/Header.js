@@ -17,7 +17,8 @@ return (
           size="sm"
           pt={4}
           ml={4}
-          ><Text fontSize="3xl" fontWeight="bold">InstruSafe, your instrument is safe!!</Text>
+          >
+          <Text fontSize="3xl" fontWeight="bold"> InstruSafe - your instrument is safe!!</Text>
             <Badge as="i" variant="solid" colorScheme="purple" ml={1}>
           Collector
         </Badge>
