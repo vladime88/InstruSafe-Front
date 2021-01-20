@@ -6,6 +6,7 @@ import Boutique from '../layouts/Boutique'
 import EthersTab from '../layouts/EthersTab'
 import Instrument from '../layouts/Instrument'
 
+
 function Main() {
   return (
     <>
