@@ -12,8 +12,10 @@ import {
   // useToast,
 } from '@chakra-ui/react'
 
+
 function Inscription() {
-  const MyAxe = useContext(MyAxeContext);
+ 
+ const MyAxe = useContext(MyAxeContext);
   const [name, setName] = useState('')
   const [tel, setTel] = useState('')
   
@@ -41,6 +43,7 @@ function Inscription() {
 
   return (
     <>
+  
       <VStack spacing={10}>
         <Heading mb={10}>Incrivez-vous</Heading>
         <form>
@@ -48,6 +51,7 @@ function Inscription() {
             <FormLabel>Nom :</FormLabel>
             <Input
               type="text"
+              id="name"
               value={name}
               onChange={(event) => {
                 setName(event.currentTarget.value)
@@ -60,6 +64,7 @@ function Inscription() {
             <Input
               value={tel}
               type="tel"
+              id="name"
               onChange={(event) => {
                 setTel(event.currentTarget.value)
               }}
@@ -79,6 +84,7 @@ function Inscription() {
           </Center>
         </form>
       </VStack>
+
     </>
   )
 }

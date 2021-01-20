@@ -5,7 +5,7 @@ import { ethers } from 'ethers'
 function EthersTab() {
   const [isEtherem, setIsEtherem] = useState(false)
   const [isEnable, setIsEnable] = useState(false)
-  const [account, setAccount] = useState('0x0')
+  const [account, setAccount] = useState('0x00')
   const [network, setNetwork] = useState(null)
   const [balance, setBalance] = useState(0)
 
