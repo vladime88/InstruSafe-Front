@@ -76,7 +76,6 @@ function Inscription() {
               type="submit"
               colorScheme="blue"
               mt={10}
-              // eslint-disable-next-line no-sequences
               onClick={handleInscription}
             >
               register
